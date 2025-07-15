@@ -8,11 +8,11 @@ export type Category = Props;
 
 export const categories: Props[] = [
   {
-    title: "Technology",
+    title: "Europe",
     slug: "technology",
     color: "blue",
     description:
-      "Keep up with the latest tech trends and learn about the latest innovations in software development, hardware design, cybersecurity, and more.",
+      "Keep up with the latest  trends and learn about the latest innovations in software development, hardware design, cybersecurity, and more.",
   },
   {
     title: "Lifestyle",
@@ -22,7 +22,7 @@ export const categories: Props[] = [
       "Explore the latest trends and ideas in fashion, food, home design, and more, and get inspiration for living your best life.",
   },
   {
-    title: "Personal",
+    title: "Asia",
     slug: "personal",
     color: "green",
     description:
@@ -36,7 +36,7 @@ export const categories: Props[] = [
       "Plan your next adventure and get travel tips and inspiration from experienced travelers, with articles covering destinations, cultures, and more.",
   },
   {
-    title: "Design",
+    title: "Africa",
     slug: "design",
     color: "purple",
     description:

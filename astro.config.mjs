@@ -7,8 +7,10 @@ import sitemap from "@astrojs/sitemap";
 
 import { remarkReadingTime } from "./src/utils/all";
 
+import serviceWorker from "astrojs-service-worker";
+
 export default defineConfig({
-  site: "https://stablo-astro.web3templates.com",
+  site: "https://mytopcountries.web.app/",
   experimental: {
     contentCollections: true,
   },
@@ -24,5 +26,8 @@ export default defineConfig({
     }),
     mdx(),
     sitemap(),
+    [serviceWorker()],
   ],
 });
+
+

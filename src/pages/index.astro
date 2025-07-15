@@ -3,6 +3,12 @@ import Container from "@components/container.astro";
 import Postlist from "@components/postlist.astro";
 import Layout from "@layouts/Layout.astro";
 import { latestPosts } from "@utils/content";
+import { Icon } from "astro-icon";
+
+import { Image, Picture } from "@astrojs/image/components";
+
+import CookieConsent from "react-cookie-consent";
+
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 // const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 //   (a, b) =>

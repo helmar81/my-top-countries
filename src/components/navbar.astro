@@ -2,7 +2,7 @@
 import Container from "@components/container.astro";
 import logoImage from "@assets/logo.svg";
 import darkLogo from "@assets/logo-dark.svg";
-
+import Themeswitch from "./themeswitch.astro";
 interface Menu {
   label: string;
   href: string;
@@ -26,20 +26,15 @@ const leftmenu: Menu[] = [
 
 const rightmenu: Menu[] = [
   {
-    label: "Archive",
+    label: "Blog",
     href: "/archive",
   },
   {
-    label: "Github",
-    href: "https://github.com/web3templates/stablo-astro",
-    external: true,
-    badge: "new",
+    label: "Video",
+    href: "/video",
+    
   },
-  {
-    label: "Download",
-    href: "https://web3templates.com/templates/stablo-minimal-blog-website-template",
-    external: true,
-  },
+  
 ];
 
 const mobilemenu: Menu[] = [...leftmenu, ...rightmenu];
@@ -60,7 +55,7 @@ const mobilemenu: Menu[] = [...leftmenu, ...rightmenu];
           ))
         }
       </div>
-
+      <Themeswitch />
       <div class="flex items-center justify-between w-full md:w-auto">
         <a class="w-28 dark:hidden" href="/">
           <img src={logoImage} alt="Logo" width={132} height={52} />

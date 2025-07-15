@@ -1,4 +1,7 @@
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
 User-agent: *
 Allow: /
 
-Sitemap: http://astroship.web3templates.com/sitemap-index.xml
+Sitemap: http://mytopcountries.web.app/sitemap-index.xml

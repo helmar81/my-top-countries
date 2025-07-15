@@ -43,72 +43,121 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"blog": {
-"14-architectural-design-ideas-for-spacious-interior.md": {
-  id: "14-architectural-design-ideas-for-spacious-interior.md",
-  slug: "14-architectural-design-ideas-for-spacious-interior",
+"australia.md": {
+  id: "australia.md",
+  slug: "australia",
   body: string,
   collection: "blog",
-  data: any
+  data: InferEntrySchema<"blog">
 },
-"complete-guide-fullstack-development.md": {
-  id: "complete-guide-fullstack-development.md",
-  slug: "complete-guide-fullstack-development",
+"greece.md": {
+  id: "greece.md",
+  slug: "greece",
   body: string,
   collection: "blog",
-  data: any
+  data: InferEntrySchema<"blog">
 },
-"essential-data-structures-algorithms.md": {
-  id: "essential-data-structures-algorithms.md",
-  slug: "essential-data-structures-algorithms",
+"india.md": {
+  id: "india.md",
+  slug: "india",
   body: string,
   collection: "blog",
-  data: any
+  data: InferEntrySchema<"blog">
 },
-"every-next-level-of-your-life-will-demand-a-different-you.md": {
-  id: "every-next-level-of-your-life-will-demand-a-different-you.md",
-  slug: "every-next-level-of-your-life-will-demand-a-different-you",
+"morocco.md": {
+  id: "morocco.md",
+  slug: "morocco",
   body: string,
   collection: "blog",
-  data: any
+  data: InferEntrySchema<"blog">
 },
-"how-to-become-frontend-master.md": {
-  id: "how-to-become-frontend-master.md",
-  slug: "how-to-become-frontend-master",
+"pandemic.md": {
+  id: "pandemic.md",
+  slug: "pandemic",
   body: string,
   collection: "blog",
-  data: any
+  data: InferEntrySchema<"blog">
 },
-"kitchensink.mdx": {
-  id: "kitchensink.mdx",
-  slug: "kitchensink",
+"peru.md": {
+  id: "peru.md",
+  slug: "peru",
   body: string,
   collection: "blog",
-  data: any
+  data: InferEntrySchema<"blog">
 },
-"nothing-new-about-undermining-women-autonomy.md": {
-  id: "nothing-new-about-undermining-women-autonomy.md",
-  slug: "nothing-new-about-undermining-women-autonomy",
+"philippines.md": {
+  id: "philippines.md",
+  slug: "philippines",
   body: string,
   collection: "blog",
-  data: any
+  data: InferEntrySchema<"blog">
 },
-"template.md": {
-  id: "template.md",
-  slug: "template",
+"ramadan.md": {
+  id: "ramadan.md",
+  slug: "ramadan",
   body: string,
   collection: "blog",
-  data: any
+  data: InferEntrySchema<"blog">
 },
-"this-bread-pudding-will-give-you-all-the-fall-feels.md": {
-  id: "this-bread-pudding-will-give-you-all-the-fall-feels.md",
-  slug: "this-bread-pudding-will-give-you-all-the-fall-feels",
+"rome.md": {
+  id: "rome.md",
+  slug: "rome",
   body: string,
   collection: "blog",
-  data: any
+  data: InferEntrySchema<"blog">
+},
+"sabbatical.md": {
+  id: "sabbatical.md",
+  slug: "sabbatical",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+},
+"thailand.md": {
+  id: "thailand.md",
+  slug: "thailand",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+},
+"top-countries.md": {
+  id: "top-countries.md",
+  slug: "top-countries",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+},
+"travel.md": {
+  id: "travel.md",
+  slug: "travel",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+},
+"trending.md": {
+  id: "trending.md",
+  slug: "trending",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+},
+"vietnam.md": {
+  id: "vietnam.md",
+  slug: "vietnam",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+},
+"vungtau.md": {
+  id: "vungtau.md",
+  slug: "vungtau",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
 },
 },
 
 	};
 
-	type ContentConfig = never;
+	type ContentConfig = typeof import("./config");
 }

@@ -1,51 +1,31 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Container from "@components/container.astro";
-import { Image } from "@astrojs/image/components";
-import { authors } from "@data/authors";
-import Pagetitle from "@components/pagetitle.astro";
-import Link from "@components/ui/link.astro";
+import Container from "components/container.astro";
+import Pagetitle from "components/pagetitle.astro";
+import Link from "components/ui/link.astro";
+import { Swiper } from "swiper/react";
+
+
+
 ---
 
 <Layout title="About">
-  <Container>
+ 
     <Pagetitle>
       <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <Fragment slot="desc">Helmar Bachle</Fragment>
     </Pagetitle>
 
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
-      {
-        authors.slice(0, 3).map((item) => (
-          <div class="group">
-            <div class="w-full aspect-square">
-              <Image
-                src={item.image}
-                format="avif"
-                width={580}
-                height={580}
-                alt="Team"
-                class="w-full h-full object-cover rounded transition  group-hover:-translate-y-1 group-hover:shadow-xl"
-              />
-            </div>
+ 
 
-            <div class="mt-4 text-center">
-              <h3 class="text-sm text-gray-500"> {item.name}</h3>
-            </div>
-          </div>
-        ))
-      }
-    </div>
-
-    <div class="mx-auto max-w-xl text-center mt-14">
-      <p class="text-lg leading-relaxed text-gray-600">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
+    <div class="mx-auto max-w-xl text-justify py-3.5">
+      <p class="text-lg leading-relaxed text-gray-600n justify-around">
+        AS A LEVEL 3 SUPPORT ASSOCIATE FOR AMAZON, I EXCEL AT HANDLING COMPLEX QUERIES AND ESCALATED ISSUES FROM OUR PREMIUM SELLERS. IN MY SPARE TIME, I AM PASSIONATE ABOUT STAYING UP-TO-DATE ON THE LATEST TECHNOLOGIES AND ENJOY BUILDING APPS WITH ASTRO.JS AND SVELTEKIT. WITH A LOVE FOR TRAVEL, I HAVE VISITED 66 COUNTRIES AND BRING A DIVERSE PERSPECTIVE TO MY WORK. WHETHER AT HOME OR ABROAD, I AM ALWAYS SEEKING NEW CHALLENGES AND OPPORTUNITIES TO GROW.
       </p>
       <div class="mt-8">
         <Link href="/contact" style="primary">Get in touch</Link>
       </div>
     </div>
+
   </Container>
 </Layout>

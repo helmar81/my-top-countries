@@ -1,0 +1,10 @@
+{
+  "projects": {
+    "staging": "mytopcountries",
+    "default": "mytopcountries",
+    "update": "mytopcountries",
+    "firebase init hosting": "mytopcountries"
+  },
+  "targets": {},
+  "etags": {}
+}
