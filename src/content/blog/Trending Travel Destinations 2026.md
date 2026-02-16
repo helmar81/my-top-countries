@@ -3,7 +3,6 @@ title: "Top Trending Travel Destinations in 2026"
 description: "Discover the most exciting, sustainable, and culturally rich travel destinations for 2026—from Asia to South America, Europe to Africa."
 pubDate: 2025-07-19
 heroImage: '../../assets/Tokyo.png'
-tags: [travel, trends, 2026, destinations, adventure, sustainability]
 ---
 
 # 🌍 

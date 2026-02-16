@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CountryFlags from '../components/CountryFlags.astro';
+
+const pageTitle = "Where have you been";
+---
+
+<BaseLayout title={pageTitle} description="A list of countries I have visited.">
+  <main>
+    
+
+   
+
+ <section class="population">
+      <h2>🌍 World Population (Live)</h2>
+      <iframe 
+        src="https://www.worldometers.info/world-population/" 
+        width="100%" 
+        height="500" 
+        style="border:none; overflow:hidden;"
+        loading="lazy">
+      </iframe>
+    </section>
+
+    
+  </main>
+</BaseLayout>

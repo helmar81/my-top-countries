@@ -2,12 +2,23 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CountryFlags from '../components/CountryFlags.astro';
 
-const pageTitle = "Where have you been";
+const pageTitle = "Worldometer";
 ---
 
-<BaseLayout title={pageTitle}>
+<BaseLayout title={pageTitle} description="A list of countries I have visited.">
   <main>
-    <h1>{pageTitle}</h1>
+    
+
+
+
+<h1>{pageTitle}</h1>
     <CountryFlags />
+
+		<div class="flex justify-center mt-8">
+  <a href="/World Population" class="inline-block px-6 py-3 rounded-2xl bg-blue-100 text-current text-lg shadow-md hover:bg-blue-200 hover:shadow-lg transition duration-300 ease-in-out">
+    🌍 World Population (live)
+  </a>
+</div>
+
   </main>
 </BaseLayout>

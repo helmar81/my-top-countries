@@ -1,11 +1,16 @@
-import { glob } from 'astro/loaders';
-import { defineCollection, z } from 'astro:content';
+// src/content/config.ts (FIXED)
+
+import { defineCollection, z } from '@astrojs/content';
+// Note: We removed the import for 'astro/loaders'
 
 const blog = defineCollection({
-	// Load Markdown and MDX files in the `src/content/blog/` directory.
-	loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
+	// 🚨 The type is crucial for .md/.mdx files
+	type: 'content', 
+	
+	// We removed the 'loader' property
+	
 	// Type-check frontmatter using a schema
-	schema: ({ image }) => z.object({
+	schema: ({ image }: { image: () => any }) => z.object({
 		title: z.string(),
 		description: z.string(),
 		// Transform string to Date object

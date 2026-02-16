@@ -1,6 +1,6 @@
 ---
 title: 'Peru'
-description: 'Lorem ipsum dolor sit amet'
+description: 'visited in Jan 2024'
 pubDate: 'Jan 22 2024'
 heroImage: '../../assets/Alpaca.jpg'
 ---
