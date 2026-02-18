@@ -1,0 +1,26 @@
+# My Top Countries
+
+> A personal travel blog chronicling adventures across 74+ countries.
+
+## Overview
+
+This website documents personal travel experiences, top country rankings, and insights from visiting over 70 countries. It serves as a travel diary and a source of inspiration for fellow travelers.
+
+## Site Structure
+
+- **Home** (`/`): Introduction to the travel blog, featuring a highlight video and quick links.
+- **Blog** (`/blog`): Detailed posts about specific trips, travel tips, and destination reviews.
+- **Top Countries** (`/blog/top-countries`): A curated list of the top 10 favorite countries visited, with flags and statistics.
+- **Countries** (`/countries`): A comprehensive list and tracker of all countries visited.
+- **About** (`/about`): Information about the author, their background, and travel philosophy.
+
+## Key Content
+
+- **Travel Statistics**: Tracks the number of countries visited (currently 74).
+- **Destinations**: Features content on Australia, Greece, Morocco, Sri Lanka, Vietnam, Portugal, Thailand, Peru, USA, Mexico, and more.
+- **Tools**: Includes a "World Population (live)" tracker.
+
+## Technical Details
+
+- Built with **Astro** and **Tailwind CSS**.
+- Deployment: `https://mytopcountries.web.app/`

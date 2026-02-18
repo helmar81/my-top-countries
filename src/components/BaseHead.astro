@@ -6,7 +6,7 @@ import { SITE_TITLE } from '../consts';
 import FallbackImage from '../assets/blog-placeholder-1.jpg';
 import type { ImageMetadata } from 'astro';
 
- import '../styles/global.css'
+
 
 
 interface Props {
@@ -19,6 +19,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = FallbackImage } = Astro.props;
 ---
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BBW6FGSFT0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BBW6FGSFT0');
+</script>
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
@@ -60,4 +70,3 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta property="twitter:image" content={new URL(image.src, Astro.url)} />
 
 <meta name="twitter:image" content="https://mytopcountries.web.app/icon.png" />
-		<link href="/src/styles.css" rel="stylesheet">

@@ -11,9 +11,6 @@
     },
     "headers": [
       {
-        // Rule 1: Cache Fingerprinted Astro Assets INDEFINITELY (1 Year)
-        // These files contain a content hash in their name (e.g., mo.B64m5Zp_.mp4), 
-        // meaning their URL changes if the content changes, making them safe to cache forever.
         "source": "/_astro/**",
         "headers": [
           {
@@ -23,9 +20,6 @@
         ]
       },
       {
-        // Rule 2: Cache Other Static Assets (Images, Fonts, Videos) for a long time (1 Week)
-        // This includes files like /icon.png and /fonts/... that are outside the /_astro/ folder
-        // and may not be fingerprinted. One week is a safe, long duration.
         "source": "**/*.{jpg,jpeg,gif,png,webp,svg,ico,woff,woff2,ttf,eot,mp4}",
         "headers": [
           {
@@ -35,8 +29,6 @@
         ]
       },
       {
-        // Rule 3: Cache HTML Documents for a short time (5 minutes)
-        // This ensures visitors get fresh content without having to wait a long time for cache expiration.
         "source": "**/*.html",
         "headers": [
           {

@@ -1,0 +1,53 @@
+---
+title: 'My Top Countries'
+description: 'I have visited 72 out of 195 countries so far'
+pubDate: 'Feb 08 2025'
+heroImage: '../../assets/quphuoc.png'
+---
+import vn from '../../assets/flags/vn.png';
+import ma from '../../assets/flags/ma.png';
+import au from '../../assets/flags/au.png';
+import lk from '../../assets/flags/lk.png';
+import gr from '../../assets/flags/gr.png';
+import pt from '../../assets/flags/pt.png';
+import th from '../../assets/flags/th.png';
+import pe from '../../assets/flags/pe.png';
+import us from '../../assets/flags/us.png';
+import mx from '../../assets/flags/mx.png';
+
+export const countryNames = [
+   { name: 'Vietnam', flag: vn, rank: 1, population: '99.5M', area: '331,210 km²' },
+    { name: 'Morocco', flag: ma, rank: 2, population: '37.8M', area: '446,550 km²' },
+  { name: 'Australia', flag: au, rank: 3, population: '26.5M', area: '7,692,024 km²' },
+   { name: 'Sri Lanka', flag: lk, rank: 4, population: '22.2M', area: '65,610 km²' },
+  { name: 'Greece', flag: gr, rank: 5, population: '10.4M', area: '131,957 km²' },
+  { name: 'Portugal', flag: pt, rank: 6, population: '10.2M', area: '92,212 km²' },
+  { name: 'Thailand', flag: th, rank: 7, population: '71.8M', area: '513,120 km²' },
+  { name: 'Peru', flag: pe, rank: 8, population: '34.4M', area: '1,285,216 km²' },
+  { name: 'USA', flag: us, rank: 9, population: '335M', area: '9,833,520 km²' },
+  { name: 'Mexico', flag: mx, rank: 10, population: '129M', area: '1,964,375 km²' },
+];
+
+## 🌍 Here are my top 10:
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+  {countryNames.map((c) => (
+    <div class="rounded-2xl shadow-md p-4 text-center hover:shadow-xl transition">
+      <img src={c.flag.src} alt={c.name} class="w-24 h-16 mx-auto object-contain mb-2" />
+      <h3 class="text-lg font-semibold">{c.name}</h3>
+      <div class="text-sm text-gray-600 mt-2">
+        <p><strong>Rank:</strong> {c.rank}</p>
+        <p><strong>Population:</strong> {c.population}</p>
+        <p><strong>Area:</strong> {c.area}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
+---
+
+There are 195 countries in the world, of which 193 are UN member states while 2 are non-member observer states - the Vatican and Palestine.
+
+Fifty-four of these countries are located in Africa, forty-eight in Asia, forty-four in Europe, thirty-three in Latin America and the Caribbean, fourteen in Oceania, and two in Northern America.  
+
+[[Top]](#top)

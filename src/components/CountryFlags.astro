@@ -27,6 +27,9 @@ const countryCodes = Object.keys(countryNames);
           <option value="south-america">South America</option>
           <option value="oceania">Oceania</option>
         </select>
+        <button id="expand-view" class="icon-btn" title="Expand View">
+          ↕️
+        </button>
       </div>
 
       <!-- Toggle buttons for mobile -->
@@ -111,6 +114,11 @@ const countryCodes = Object.keys(countryNames);
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .section.expanded {
+    max-height: 150vh; /* Allow it to grow significantly */
   }
 
   h2 {
@@ -135,6 +143,20 @@ const countryCodes = Object.keys(countryNames);
     border-radius: 8px;
     font-size: 1rem;
     min-height: 42px;
+  }
+
+  .icon-btn {
+    padding: 0 12px;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+  }
+  
+  .icon-btn:hover {
+    background: #f0f0f0;
   }
 
   .mobile-controls {
@@ -427,7 +449,7 @@ const countryCodes = Object.keys(countryNames);
 <script>
   let currentMode = 'drag'; // 'drag' or 'button'
   let selectedCountries = new Set();
-  let displayedCount = 50;
+  let displayedCount = 100;
   let allFlags = [];
 
   function speakCountryName(code) {
@@ -618,28 +640,23 @@ const countryCodes = Object.keys(countryNames);
     const moveSelectedBtn = document.getElementById("move-selected");
     const loadMoreBtn = document.getElementById("load-more");
     const clearAllBtn = document.getElementById("clear-all");
+    const expandBtn = document.getElementById("expand-view");
 
-    // Store all flags for pagination
+    // Expand view toggle
+    expandBtn?.addEventListener("click", () => {
+      const section = allCountries?.closest('.section');
+      section?.classList.toggle('expanded');
+      expandBtn.textContent = section?.classList.contains('expanded') ? '↕️' : '↕️';
+    });
+
+    // Store all flags for pagination and attach listeners ONCE
     if (allCountries) {
       allFlags = Array.from(allCountries.querySelectorAll('.flag-item'));
-      showFlags(displayedCount);
-    }
-
-    // Restore visited countries
-    const saved = JSON.parse(localStorage.getItem("visitedCountries") || "[]");
-    saved.forEach(code => {
-      const flag = document.querySelector(`.flag-item[data-code="${code}"]`);
-      if (flag && visitedCountries) {
-        visitedCountries.appendChild(flag);
-      }
-    });
-    updateCount();
-
-    // Add event listeners to all flags
-    function setupFlagListeners() {
-      document.querySelectorAll<HTMLElement>(".flag-item").forEach(flag => {
+      
+      // Attach listeners to ALL flags immediately
+      allFlags.forEach(flag => {
         // Drag events
-          flag.addEventListener("dragstart", (e) => {
+        flag.addEventListener("dragstart", (e) => {
           const dragEvent = e as DragEvent;
           dragEvent.dataTransfer?.setData("text/plain", flag.dataset.code || "");
           flag.classList.add('dragging');
@@ -680,9 +697,20 @@ const countryCodes = Object.keys(countryNames);
         // Add touch support
         addTouchSupport(flag);
       });
+
+      showFlags(displayedCount);
     }
 
-    setupFlagListeners();
+
+    // Restore visited countries (moved here to run after listeners are attached)
+    const saved = JSON.parse(localStorage.getItem("visitedCountries") || "[]");
+    saved.forEach(code => {
+      const flag = allFlags.find(f => f.dataset.code === code);
+      if (flag && visitedCountries) {
+        visitedCountries.appendChild(flag);
+      }
+    });
+    updateCount();
 
     // Drop zone events
     visitedCountries?.addEventListener("dragover", (e) => {
@@ -743,7 +771,6 @@ const countryCodes = Object.keys(countryNames);
     loadMoreBtn?.addEventListener("click", () => {
       displayedCount += 50;
       showFlags(displayedCount);
-      setupFlagListeners(); // Re-setup listeners for new flags
     });
 
     // Clear all visited
@@ -775,7 +802,6 @@ const countryCodes = Object.keys(countryNames);
       // Reset display
       displayedCount = 50;
       showFlags(displayedCount);
-      setupFlagListeners();
     });
 
     // Search functionality
