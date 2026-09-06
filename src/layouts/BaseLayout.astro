@@ -8,9 +8,10 @@ import "../styles/global.css";
 export interface Props {
   title: string;
   description: string;
+  author?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, author = "Helmar Baechle" } = Astro.props;
 ---
 
 <!doctype html>
@@ -19,28 +20,20 @@ const { title, description } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MMKVSBB3');</script>
+    <!-- End Google Tag Manager -->
 
-  
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MMKVSBB3');</script>
-<!-- End Google Tag Manager -->
-
-<meta name="google-site-verification" content="ikch8cJutwjQEDY7yMGEGLOSFRBKDCUl7kCT_ZneM8U" />
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMKVSBB3"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
+    <meta name="google-site-verification" content="ikch8cJutwjQEDY7yMGEGLOSFRBKDCUl7kCT_ZneM8U" />
 
     <!-- Title & Description -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="author" content="Helmar Baechle" />
+    <meta name="author" content={author} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/icon.png" />
@@ -57,6 +50,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <meta property="og:image" content="https://mytopcountries.web.app/quphuoc.png" />
     <meta property="og:url" content="https://mytopcountries.web.app/" />
     <meta property="og:type" content="website" />
+    <meta property="article:author" content={author} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -70,8 +64,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Global CSS -->
     <link rel="stylesheet" href="/global.css" media="print" onload="this.media='all'" />
 
-
-  
     <!-- Optional Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -87,11 +79,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </head>
 
   <body>
-
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMKVSBB3"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMKVSBB3"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <Header />
     <main>
       <slot />
