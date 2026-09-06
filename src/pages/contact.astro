@@ -13,13 +13,11 @@ import { Icon } from 'astro-icon/components';  // Import from components subpath
   pubDate={new Date('August 08 2025')}
   heroImage={AboutHeroImage}
 >
- <main class="py-8 sm:py-12 lg:py-20 px-4 sm:px-6 lg:px-0">
- 
- <body class="bg-white text-gray-500 font-body leading-normal personality-casual">
+ <div class="py-8 sm:py-12 lg:py-20 px-4 sm:px-6 lg:px-0 text-gray-600 dark:text-gray-300 font-body leading-normal personality-casual">
         <section class="contact-section">
       <div class="contact-intro">
         
-        <p class="contact-description">
+        <p class="text-gray-600 dark:text-gray-300">
           Fill out the form below and I will
            get back to you as soon as possible.
         </p>
@@ -54,6 +52,7 @@ import { Icon } from 'astro-icon/components';  // Import from components subpath
       </form>
 
        </section>
+  </div>
 
        <style>
 .contact-section {
@@ -102,11 +101,23 @@ import { Icon } from 'astro-icon/components';  // Import from components subpath
   border-radius: 0.375rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  background-color: transparent;
+  color: inherit;
+}
+
+:global(.dark) .form-input,
+:global(.dark) .form-textarea {
+  border-color: #374151;
 }
 
 .form-input::placeholder,
-.form-textarea:focus-visible {
+.form-textarea::placeholder {
   color: #6b7280;
+}
+
+:global(.dark) .form-input::placeholder,
+:global(.dark) .form-textarea::placeholder {
+  color: #9ca3af;
 }
 
 .form-input:focus-visible,
@@ -130,8 +141,5 @@ import { Icon } from 'astro-icon/components';  // Import from components subpath
 
     </style> 
     </Layout>
-
-  </body>
-</html>
 
     

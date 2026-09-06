@@ -24,12 +24,19 @@ const { title, description } = Astro.props;
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';(j as HTMLScriptElement).async=true;(j as HTMLScriptElement).src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode&&f.parentNode.insertBefore(j,f);
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-MMKVSBB3');</script>
 <!-- End Google Tag Manager -->
 
-    <meta name="google-site-verification" content="ikch8cJutwjQEDY7yMGEGLOSFRBKDCUl7kCT_ZneM8U" />
+<meta name="google-site-verification" content="ikch8cJutwjQEDY7yMGEGLOSFRBKDCUl7kCT_ZneM8U" />
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMKVSBB3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
     <!-- Title & Description -->
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -68,6 +75,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';(j as HTMLScriptElement).async
     <!-- Optional Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script is:inline>
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
   </head>
 
   <body>

@@ -1,11 +1,7 @@
 ---
 title: 'Vung Tau is my Paradise'
 description: 'Vietnam.'
-pubDate: 'Apr 19 2020
-'
-
-
-
+pubDate: 'Apr 19 2020'
 heroImage: '../../assets/vt.jpg'
 ---
 

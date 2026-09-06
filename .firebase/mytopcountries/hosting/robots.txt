@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: https://mytopcountries.web.app/sitemap.xml
+Sitemap: https://mytopcountries.web.app/sitemap-index.xml

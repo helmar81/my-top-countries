@@ -108,19 +108,6 @@ Where will 2026 take you?
 
 ---
 
-*Sources: Contiki, Expedia, Oliver’s Travels, TravelAgentPro, The Sun, Luxury Lifestyle Magazine*
 
-> 📸 Featured image from Unsplash or your own media assets.
 
-      <a
-  href="https://unsplash.com/@uspekhi"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="inline-flex items-center gap-1 text-blue-600 underline hover:text-blue-800"
->
-  View on Unsplash
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3h7v7m0 0L10 21l-7-7 11-11z" />
-  </svg>
-</a>
 

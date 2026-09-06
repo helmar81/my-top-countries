@@ -1,14 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import CountryFlags from '../components/CountryFlags.astro';
+import "flag-icons/css/flag-icons.min.css";
+import visitedCountries from '../data/visited.json'; 
 
-const pageTitle = "Where have You been";
+const pageTitle = "I have been to: ";
+const countryCodes = Object.keys(visitedCountries);
 ---
 
 <BaseLayout title={pageTitle} description="A list of countries I have visited.">
   <main>
     <h1>{pageTitle}</h1>
-    <CountryFlags />
+    
+    <div class="flags-container">
+      {countryCodes.map(code => (
+        <div class="flag-item">
+          <div class="flag-content">
+            <span class={`fi fi-${code.toLowerCase()}`}></span>
+            <span class="country-name">{visitedCountries[code]}</span>
+          </div>
+        </div>
+      ))}
+    </div>
 
     <div class="flex justify-center mt-8">
       <button id="world-pop-btn" class="inline-block px-6 py-3 rounded-2xl bg-blue-100 text-current text-lg shadow-md hover:bg-blue-200 hover:shadow-lg transition duration-300 ease-in-out cursor-pointer">
@@ -19,10 +31,10 @@ const pageTitle = "Where have You been";
     <dialog id="world-pop-modal" class="p-0 rounded-xl shadow-2xl backdrop:bg-gray-900/50 w-full max-w-4xl">
       <div class="flex flex-col h-[70vh]">
         <div class="flex justify-between items-center p-4 border-b">
-          <h2 class="text-xl font-bold m-0">World Population (Live)</h2>
+          <h2 class="text-xl font-bold m-0 text-gray-900 dark:text-white">World Population (Live)</h2>
           <button id="close-modal" class="text-gray-500 hover:text-gray-700 text-2xl leading-none">&times;</button>
         </div>
-        <div class="flex-1 bg-white">
+        <div class="flex-1 bg-white dark:bg-slate-800">
           <iframe 
             src="https://www.worldometers.info/world-population/" 
             width="100%" 
@@ -67,5 +79,64 @@ const pageTitle = "Where have You been";
   dialog::backdrop {
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
+  }
+
+  .flags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .flag-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 100px;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    transition: all 0.2s ease-in-out;
+    background: var(--bg-color, white);
+    border: 1px solid #eaeaea;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  }
+
+  :global(.dark) .flag-item {
+    border-color: #374151;
+  }
+
+  .flag-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+    border-color: #d0d0d0;
+  }
+
+  :global(.dark) .flag-item:hover {
+    border-color: #4b5563;
+  }
+
+  .flag-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .flags-container span.fi {
+    font-size: 3.5rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  .country-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    word-break: break-word;
+    line-height: 1.3;
+    color: inherit;
   }
 </style>

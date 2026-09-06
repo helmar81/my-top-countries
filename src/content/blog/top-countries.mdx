@@ -4,6 +4,7 @@ description: 'I have visited 76 out of 195 countries so far'
 pubDate: 'Feb 08 2025'
 heroImage: '../../assets/quphuoc.png'
 ---
+import { Image } from 'astro:assets';
 import vn from '../../assets/flags/vn.png';
 import ma from '../../assets/flags/ma.png';
 import au from '../../assets/flags/au.png';
@@ -33,7 +34,7 @@ export const countryNames = [
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
   {countryNames.map((c) => (
     <div class="rounded-2xl shadow-md p-4 text-center hover:shadow-xl transition">
-      <img src={c.flag.src} alt={c.name} class="w-24 h-16 mx-auto object-contain mb-2" />
+      <Image src={c.flag} alt={c.name} class="w-24 h-16 mx-auto object-contain mb-2" />
       <h3 class="text-lg font-semibold">{c.name}</h3>
       <div class="text-sm text-gray-600 mt-2">
         <p><strong>Rank:</strong> {c.rank}</p>

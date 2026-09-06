@@ -1,43 +1,71 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
-import Image from '../assets/mex.png';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import myImage from '../assets/mex.webp';
+
+const pageTitle = 'About Me';
+const pageDescription = 'Learn more about Helmar Baechle: Amazon L3 Support Associate, technologist, and global traveler from the Black Forest.';
 ---
 
-<Layout
-  title="About Me"
-  description="Learn more about Helmar Baechle: Amazon L3 Support Associate, technologist, and global traveler from the Black Forest."
-  pubDate={new Date('February 18 2026')}
->
-  <img src={Image.src} alt="Helmar Baechle" class="rounded-full w-48 h-48 mx-auto shadow-lg" />
-  
-  <div class="mx-auto max-w-2xl text-justify py-3.5 px-4">
-    <h2 class="text-2xl font-bold text-center mb-4">Helmar Baechle</h2>
-    
-    <p class="mb-6 text-lg leading-relaxed text-gray-700">
-      Born in the heart of the **Black Forest**, I carry the region's tradition of precision and craftsmanship into everything I build. My journey has been shaped by a global outlook, including **living and working in the UK for six years**. This period was instrumental in my growth, providing me with a wealth of international experience and a high-level professional foundation that I bring to every project today.
-    </p>
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <section class="mx-auto max-w-4xl px-4 py-12">
+    <div class="flex flex-col items-center text-center gap-6 mb-10">
+      <Image src={myImage} alt="Helmar Baechle" class="rounded-full w-48 h-48 shadow-lg object-cover" />
+      <div>
+        <h1 class="text-4xl font-bold tracking-tight text-slate-950 dark:text-white">{pageTitle}</h1>
+        <p class="mt-3 text-base text-slate-600 dark:text-slate-400">{pageDescription}</p>
+      </div>
+    </div>
 
-    <h3 class="text-xl font-semibold mb-2 text-gray-800">Professional Expertise</h3>
-    <p class="mb-6 text-gray-600">
-      Currently, I serve as a **Level 3 Support Associate at Amazon**, where I expertly manage complex, high-priority escalations for premium sellers. My role requires deep analytical problem-solving and the ability to navigate intricate technical ecosystems under pressure—skills further honed during my extensive time in the British corporate landscape.
-    </p>
+    <div class="space-y-10 text-slate-700 dark:text-slate-300">
+      <div class="prose prose-slate dark:prose-invert mx-auto max-w-none">
+        <h2>Helmar Baechle</h2>
+        <p>
+          Born in the heart of the <strong>Black Forest</strong>, I carry the region's tradition of precision and craftsmanship into everything I build. My journey has been shaped by a global outlook, including <strong>living and working in the UK for six years</strong>. This period was instrumental in my growth, providing me with a wealth of international experience and a high-level professional foundation that I bring to every project today.
+        </p>
+      </div>
 
-    <h3 class="text-xl font-semibold mb-2 text-gray-800">Technical Stack & Innovation</h3>
-    <p class="mb-2 text-gray-600">
-      I am an avid technologist constantly exploring the edge of web development and automation. My current core stack includes:
-    </p>
-    <ul class="list-disc list-inside mb-6 text-gray-600 space-y-1">
-      <li><strong>Cloud & DevOps:</strong> Google Cloud Platform (GCP), Docker, Firebase</li>
-      <li><strong>AI & Automation:</strong> AI Stack integration, n8n workflows</li>
-      <li><strong>Modern Web:</strong> Next.js, React, and a growing passion for Astro.js</li>
-    </ul>
+      <div class="grid gap-8 lg:grid-cols-2">
+        <div class="rounded-3xl bg-slate-50 dark:bg-slate-800 p-6 shadow-sm border border-slate-200 dark:border-slate-700">
+          <h3 class="text-2xl font-semibold text-slate-900 dark:text-slate-100 mb-4">Professional Expertise</h3>
+          <p class="text-slate-600 dark:text-slate-400 leading-7">
+            Currently, I serve as a <strong>Level 3 Support Associate at Amazon</strong>, where I expertly manage complex, high-priority escalations for premium sellers. My role requires deep analytical problem-solving and the ability to navigate intricate technical ecosystems under pressure—skills further honed during my extensive time in the British corporate landscape.
+          </p>
+        </div>
 
-    <h3 class="text-xl font-semibold mb-2 text-gray-800">The Creator & Traveler</h3>
-    <p class="mb-4 text-gray-600">
-      Beyond code, I am a Creator and Producer. I handle everything that comes with video, photography, and web development, merging aesthetics with function.
-    </p>
-    <p class="text-gray-600">
-      I bring a truly global perspective to my work, having traveled to **76 countries**. This experience has shaped my adaptability and curiosity, driving me to consistently seek new challenges—both professionally and personally.
-    </p>
-  </div>
-</Layout>
+        <div class="rounded-3xl bg-slate-50 dark:bg-slate-800 p-6 shadow-sm border border-slate-200 dark:border-slate-700">
+          <h3 class="text-2xl font-semibold text-slate-900 dark:text-slate-100 mb-4">Technical Stack & Innovation</h3>
+          <p class="text-slate-600 dark:text-slate-400 leading-7 mb-4">
+            I am an avid technologist constantly exploring the edge of web development and automation. My current core stack includes:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400">
+            <li><strong>Cloud & DevOps:</strong> Google Cloud Platform (GCP), Docker, Firebase</li>
+            <li><strong>AI & Automation:</strong> AI Stack integration, n8n workflows</li>
+            <li><strong>Modern Web:</strong> Next.js, React, and a growing passion for Astro.js</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rounded-3xl bg-white dark:bg-slate-800 p-6 shadow-sm border border-slate-200 dark:border-slate-700">
+        <h3 class="text-2xl font-semibold text-slate-900 dark:text-slate-100 mb-4">The Creator & Traveler</h3>
+        <p class="text-slate-600 dark:text-slate-400 leading-7 mb-4">
+          Beyond code, I am a Creator and Producer. I handle everything that comes with video, photography, and web development, merging aesthetics with function.
+        </p>
+        <p class="text-slate-600 dark:text-slate-400 leading-7">
+          I bring a truly global perspective to my work, having traveled to <strong>76 countries</strong>. This experience has shaped my adaptability and curiosity, driving me to consistently seek new challenges—both professionally and personally.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-12 flex justify-center">
+      <a 
+        href="https://maps.app.goo.gl/8VHvPyDfXm8TQJzX7" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg rounded-2xl shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl dark:bg-blue-500 dark:hover:bg-blue-600"
+      >
+        📸 View My Most Viewed Pictures
+      </a>
+    </div>
+  </section>
+</BaseLayout>

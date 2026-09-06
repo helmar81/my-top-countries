@@ -24,7 +24,7 @@
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "max-age=604800, public"
+            "value": "max-age=31536000, public"
           }
         ]
       },
@@ -36,6 +36,13 @@
             "value": "max-age=300, public"
           }
         ]
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/sitemap.xml",
+        "destination": "/sitemap-index.xml",
+        "type": 301
       }
     ]
   }

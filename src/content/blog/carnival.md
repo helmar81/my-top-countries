@@ -2,7 +2,7 @@
 title: 'Carnival in Germany: From Cologne’s Party to the Black Forest’s Magic'
 description: 'Discover the "Fifth Season" in Germany—an affordable destination for culture lovers, from the massive parades of Cologne to the ancient mask traditions of the Black Forest.'
 pubDate: 'Feb 18 2026'
-heroImage: '../../assets/fasnacht.png'
+heroImage: '../../assets/ohia.jpg'
 ---
 
 ## 🎭 The Tale of Two Carnivals: Rhineland vs. Black Forest

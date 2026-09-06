@@ -4,6 +4,7 @@
   "exclude": ["dist", "**/*.astro"],
   "compilerOptions": {
     "strictNullChecks": true,
+    "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],

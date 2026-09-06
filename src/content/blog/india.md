@@ -25,7 +25,7 @@ I knew that my first trip to India would not be my last and I am already plannin
 
 All in all, my first trip to India was an unforgettable experience, and I cannot wait to go back and explore more of this beautiful and exciting country.
 
-![Unsplash computer image with cat](https://source.unsplash.com/hPPy2jJBPLA/600x300)
+
 
 ### largest cities
 
@@ -68,17 +68,15 @@ All in all, my first trip to India was an unforgettable experience, and I cannot
 #### here are some statistics
 
 <ul>
-<li>The current population of India is 1,414,607,190 as of Sunday, January 22, 2023, based on Worldometer elaboration of the latest United Nations data.</li>
-<li>India 2020 population is estimated at 1,380,004,385 people at mid year according to UN data.</li>
-<li>India population is equivalent to 17.7% of the total world population.</li>
-<li>India ranks number 2 in the list of countries (and dependencies) by population.</li>
-<li>The population density in India is 464 per Km2 (1,202 people per mi2).</li>
-<li>The total land area is 2,973,190 Km2 (1,147,955 sq. miles)</li>
-<li>35.0 % of the population is urban (483,098,640 people in 2020)</li>
-<li>The median age in India is 28.4 years.</li>
-
+  <li>The current population of India is 1,476,625,576 as of mid-2026, based on Worldometer elaboration of the latest United Nations data.</li>
+  <li>India 2020 population is estimated at 1,402,617,695 people at mid year according to UN data.</li>
+  <li>India population is equivalent to 17.79% of the total world population.</li>
+  <li>India ranks number 1 in the list of countries (and dependencies) by population.</li>
+  <li>The population density in India is 497 per Km2 (1,286 people per mi2).</li>
+  <li>The total land area is 2,973,190 Km2 (1,147,955 sq. miles)</li>
+  <li>37.6% of the population is urban (555,299,296 people in 2026)</li>
+  <li>The median age in India is 29.2 years.</li>
 </ul>
-
 
 
 

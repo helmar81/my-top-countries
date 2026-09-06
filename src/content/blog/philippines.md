@@ -1,4 +1,3 @@
-
 ---
 title: 'Philippines'
 description: 'Bani Island'

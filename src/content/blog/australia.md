@@ -1,4 +1,3 @@
-
 ---
 title: 'Australia 1994'
 description: 'Sydney'
